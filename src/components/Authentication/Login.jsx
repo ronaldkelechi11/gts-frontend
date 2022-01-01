@@ -53,8 +53,8 @@ const Login = () => {
                         className="h-[50px] w-full uppercase bg-primary rounded-xl p-2 font-poppins">
                         Login
                     </motion.button>
-                    <div className="font-poppins text-center">Do you already have an account? <span
-                        onClick={goToSignup} className="text-primary underline cursor-pointer">Login Here</span></div>
+                    <div className="font-poppins text-center">Don&apos;t have an account? <span
+                        onClick={goToSignup} className="text-primary underline cursor-pointer">Sign Up Here</span></div>
                 </div>
 
                 {/* Second Section */}
