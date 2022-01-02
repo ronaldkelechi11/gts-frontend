@@ -24,6 +24,7 @@ const Login = () => {
         axios.post(import.meta.env.VITE_BACKEND_URL + "login", { user: user })
             .then((result) => {
                 console.log(result.data);
+                sessionStorage.setItem(import.meta.env.VITE_SAFETY_KEY, true)
                 navigate("/dashboard/" + result.data.username)
             }).catch((err) => {
                 if (err.response.status == 401) {

@@ -1,6 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import SideNavbar from "./SideNavbar";
+import { useEffect } from "react";
+
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    // To make sure the user logged in the right way
+    useEffect(() => {
+        if (import.meta.env.VITE_SAFETY_KEY != true) {
+            alert("Illegal Logging in");
+            navigate("/login")
+        }
+    }, [])
+
     return (
         <>
             <SideNavbar />

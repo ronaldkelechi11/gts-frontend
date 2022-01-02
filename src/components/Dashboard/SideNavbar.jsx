@@ -10,7 +10,7 @@ const SideNavbar = () => {
         <>
             <div
                 onClick={() => { setIsOpen(!isOpen) }}
-                className="w-12 h-12 bg-primary rounded-xl text-black flex justify-center items-center"
+                className="w-screen h-12 bg-primary text-black flex justify-start items-center p-2"
             >
                 <AiOutlineMenu size={24} color="currentColor" />
             </div>
@@ -24,7 +24,7 @@ const SideNavbar = () => {
 
 function NavLinks() {
     return (
-        <div className="h-full w-56 bg-primary flex flex-col">
+        <div className="h-screen w-56 bg-primary flex flex-col">
 
         </div>
     )
