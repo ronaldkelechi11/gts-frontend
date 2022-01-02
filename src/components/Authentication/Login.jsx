@@ -13,19 +13,27 @@ const Login = () => {
         navigate("/signup")
     }
 
-    function login() {
+    function login(e) {
+        e.preventDefault();
+
         var user = {
             email: email,
             password: password
         }
-        console.log(user);
+
         axios.post(import.meta.env.VITE_BACKEND_URL + "login", { user: user })
             .then((result) => {
-                console.log(result.userId);
-                navigate("/dashboard/" + result.userId)
+                console.log(result.data);
+                navigate("/dashboard/" + result.data.username)
             }).catch((err) => {
-                console.log(err);
-                alert("Error while trying to Login. Please try again later.")
+                if (err.response.status == 401) {
+                    alert("Password is not correct. Please try again.")
+                    return false;
+                }
+                if (err.response.status == 501) {
+                    alert("Incorrect Login details")
+                    return false;
+                }
             });
     }
     return (
@@ -40,19 +48,21 @@ const Login = () => {
                     </div>
 
 
-                    <form className="flex flex-col w-full gap-3">
+                    <form className="flex flex-col w-full gap-3" onSubmit={login}>
 
                         <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="email" placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} minLength={2} maxLength={255} />
 
                         <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} minLength={8} maxLength={64} />
+
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            type="submit"
+                            className="h-[50px] w-full uppercase bg-primary rounded-xl p-2 font-poppins">
+                            Login
+                        </motion.button>
                     </form>
 
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        onClick={login}
-                        className="h-[50px] w-full uppercase bg-primary rounded-xl p-2 font-poppins">
-                        Login
-                    </motion.button>
+
                     <div className="font-poppins text-center">Don&apos;t have an account? <span
                         onClick={goToSignup} className="text-primary underline cursor-pointer">Sign Up Here</span></div>
                 </div>
