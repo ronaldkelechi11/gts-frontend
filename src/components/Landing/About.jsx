@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const About = () => {
     return (
@@ -9,7 +9,16 @@ const About = () => {
                 <div className="h-[50%] w-full md:w-[50%] md:h-full">
                     <img src="/src/assets/white_logo.JPG" alt="" />
                 </div>
-                <div className="h-auto w-full md:w-[50%] md:h-full">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolorum impedit fugiat amet! Voluptatem eius error, iure mollitia in eos ea velit adipisci, quis itaque non nam veritatis ut excepturi optio ab hic numquam accusantium. Dolorum dolor corrupti itaque at asperiores! Quibusdam praesentium deserunt obcaecati id necessitatibus non soluta. Similique, sit aliquam! Voluptas dolorum quo, asperiores explicabo possimus expedita similique perspiciatis. Reprehenderit ab nulla quis fugiat neque asperiores quasi, ea minima rerum aperiam atque, nostrum repellendus tempore eligendi perferendis doloribus quae obcaecati reiciendis ratione velit repellat. Aut, recusandae! Ratione, dolorem.</div>
+                <div className="h-auto w-full md:w-[50%] md:h-full"><strong>Global Technology Services</strong> also actively analyzes market trends and develops business
+                    directions, which is associated with exploring the mining systems and trading in the crypto currency
+                    markets. We have successfully engaged in trading activities on many world exchanges, such as OKCoin,
+                    BTC-E and Bit stamp. As the main tool to trade we use Bitcoins, litecoins, dogecoin, dash and other
+                    crypto currencies. <br /> It enables fast and easy direct transactions and allows instant exchange in the
+                    most profitable way.
+
+                    We have carefully analyzed the international financial market and take into account all the
+                    preferences of investors to offer the best service with the most advanced and handy tools that will
+                    undoubtedly make our project a simple, intuitive and attractive to proponents of online earnings.</div>
             </div>
         </div>
     )

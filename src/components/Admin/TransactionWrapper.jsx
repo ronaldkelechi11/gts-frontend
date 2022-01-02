@@ -55,6 +55,7 @@ function Transaction({ transaction }) {
             <div className="">Category: <span>{transaction.category}</span></div>
             <div className="">Payment Coin: <span>{transaction.coin}</span></div>
             <div onClick={updateTransaction} className={transaction.verified ? "text-green-500" : "text-red-500"}>{transaction.verified ? <FaThumbsUp /> : <FaThumbsDown />}</div>
+            <img className="h-[400px]" src={import.meta.env.VITE_BACKEND_URL + "public/images/" + transaction.file} />
         </div>
     )
 }
