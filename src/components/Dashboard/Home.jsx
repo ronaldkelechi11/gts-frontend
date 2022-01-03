@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Plans from "../Landing/Plans";
 import axios from "axios";
 
@@ -7,7 +7,6 @@ import axios from "axios";
 const Home = () => {
     const navigate = useNavigate();
     var { username } = useParams()
-    const [screenShowing, setScreenShowing] = useState(false)
 
     useEffect(() => {
 
@@ -22,14 +21,14 @@ const Home = () => {
         refferalCode: "",
         refferals: [{}]
     })
+
     axios.get(import.meta.env.VITE_BACKEND_URL + "dashboard/" + username)
         .then((result) => {
             setUser(result.data)
         }).catch((err) => {
             console.log(err);
-            navigate('/signup')
+            // navigate('/signup')
         });
-
 
     return (
         <>
@@ -55,7 +54,7 @@ const Home = () => {
 
                 <div className="w-full flex flex-row justify-evenly">
                     <div className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-xl font-poppins">Withdraw </div>
-                    <div className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-xl font-poppins">Deposit</div>
+                    <Link to="deposit" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-xl font-poppins">Deposit</Link>
                 </div>
 
 

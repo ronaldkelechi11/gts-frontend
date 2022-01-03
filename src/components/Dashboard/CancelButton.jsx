@@ -6,11 +6,12 @@ const CancelButton = () => {
     const navigate = useNavigate()
 
     function cancel() {
-        
+        navigate(-1)
     }
     return (
         <motion.div
             whileHover={{ scale: 1.4 }}
+            onClick={cancel}
             className='w-12 h-12 rounded-xl bg-red-500 text-white fixed top-5 left-5 flex flex-col justify-center items-center cursor-pointer'>
             <FaX />
         </motion.div>

@@ -9,6 +9,7 @@ import Login from './components/Authentication/Login'
 
 import Home from './components/Dashboard/Home'
 import Deposit from './components/Dashboard/Deposit'
+import Notfound from './screens/Notfound'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -19,8 +20,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/dashboard'>
         <Route path=':username' index element={<Home />} />
-        <Route path='deposit' element={<Deposit />} />
+        <Route path=':username/deposit' element={<Deposit />} />
       </Route>
+
+      <Route path="*" element={<Notfound />} />
     </Routes>
   </BrowserRouter>
 )
