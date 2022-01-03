@@ -8,6 +8,7 @@ import Signup from './components/Authentication/Signup'
 import Login from './components/Authentication/Login'
 
 import Home from './components/Dashboard/Home'
+import Deposit from './components/Dashboard/Deposit'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/dashboard'>
         <Route path=':username' index element={<Home />} />
+        <Route path='deposit' element={<Deposit />} />
       </Route>
     </Routes>
   </BrowserRouter>
