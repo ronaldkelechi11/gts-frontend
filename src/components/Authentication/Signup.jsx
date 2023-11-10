@@ -26,12 +26,11 @@ const Signup = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "signup", { user })
             .then((result) => {
-                console.log(result);
                 sessionStorage.setItem(import.meta.env.VITE_SAFETY_KEY, true)
                 naviagte("/dashboard/" + result.data)
             }).catch((err) => {
                 if (err.response.status == 409) {
-                    alert("That Email already exist")
+                    alert("That Email or Username already exist")
                 }
             });
     }

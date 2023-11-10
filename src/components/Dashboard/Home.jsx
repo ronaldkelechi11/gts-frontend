@@ -27,7 +27,7 @@ const Home = () => {
             setUser(result.data)
         }).catch((err) => {
             console.log(err);
-            // navigate('/signup')
+            navigate('/signup')
         });
 
     return (
