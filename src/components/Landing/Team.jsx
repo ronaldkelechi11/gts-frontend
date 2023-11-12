@@ -13,7 +13,7 @@ const Team = () => {
                 <TeamItem image={"/src/assets/team-21.jpg"} name={"Fiona Alabaska"} position={"Marketing Director"} />
                 <TeamItem image={"/src/assets/team-34.jpg"} name={"Felicia Braca"} position={"Finicial Adviser"} />
                 <TeamItem image={"/src/assets/team-35.jpg"} name={"Alejandro Ramirez"} position={"Market Analysis Adviser"} />
-                <TeamItem image={"/src/assets/team-4.jpg"} name={"Patricia Izambard"} position={"Marketing Strategist"} />
+                <TeamItem image={"/assets/team-4.jpg"} name={"Patricia Izambard"} position={"Marketing Strategist"} />
             </div>
         </div>
     )
