@@ -7,7 +7,7 @@ const About = () => {
 
             <div className="w-full h-full flex flex-col md:items-center md:flex-row">
                 <div className="h-[50%] w-full md:w-[50%] md:h-full">
-                    <img src="/src/assets/white_logo.JPG" alt="" />
+                    <img src="/assets/white_logo.JPG" alt="" />
                 </div>
                 <div className="h-auto w-full md:w-[50%] md:h-full"><strong>Global Technology Services</strong> also actively analyzes market trends and develops business
                     directions, which is associated with exploring the mining systems and trading in the crypto currency

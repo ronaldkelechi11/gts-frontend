@@ -26,7 +26,6 @@ const Signup = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "signup", { user })
             .then((result) => {
-                sessionStorage.setItem(import.meta.env.VITE_SAFETY_KEY, true)
                 naviagte("/dashboard/" + result.data)
             }).catch((err) => {
                 if (err.response.status == 409) {
