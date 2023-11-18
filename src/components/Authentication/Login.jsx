@@ -23,24 +23,20 @@ const Login = () => {
 
         axios.post(import.meta.env.VITE_BACKEND_URL + "login", { user: user })
             .then((result) => {
-                if (result?.status == 503) {
+                if (result.status == 203) {
                     navigate("/admin")
                 }
                 else {
-                    sessionStorage.setItem(import.meta.env.VITE_SAFETY_KEY, true)
                     navigate("/dashboard/" + result.data.username)
                 }
             }).catch((err) => {
-                if (err.response?.status == 401) {
+                if (err.response.status == 401) {
                     alert("Password is not correct. Please try again.")
                     return false;
                 }
-                if (err.response?.status == 501) {
+                if (err.response.status == 501) {
                     alert("Incorrect Login details")
                     return false;
-                }
-                else {
-                    alert("Can't connect to Database")
                 }
             });
     }
