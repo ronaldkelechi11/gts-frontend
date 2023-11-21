@@ -53,7 +53,7 @@ function Transaction({ amount, category, coin, file, verified, }) {
             <div className="text-xl">Amount: <span> ${amount}</span></div>
             <div className="">Category: <span>{category}</span></div>
             <div className="">Payment Coin: <span>{coin}</span></div>
-            <div className={verified ? "text-green-500" : "text-red-500"}>{verified ? <FaThumbsUp /> : <FaThumbsDown />}</div>
+            <div className={verified ? "text-green-500" : "text-red-500"}>{verified ? 'Verified' : 'Un-Verified'}</div>
         </div>
     )
 }

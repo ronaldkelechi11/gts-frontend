@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CancelButton from './CancelButton'
+import axios from 'axios'
 
 const Withdrawal = () => {
     const navigate = useNavigate()
@@ -18,9 +19,21 @@ const Withdrawal = () => {
 
     function whineClient(e) {
         e.preventDefault();
-        setShowing(!showing)
+        axios.post(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/withdrawal',
+            { walletAddress: walletAddress, amount: WithdrawalAmount, coin: 'Bitcoin' })
+            .then((result) => {
+                if (result.status == 200)
+                    setShowing(!showing)
+            }).catch((err) => {
+                console.log(err);
+                alert('Slow network connection please try again later...')
+            });
     }
 
+    function done(e) {
+        e.preventDefault();
+        navigate(-1);
+    }
     return (
         <div className='w-screen h-screen flex flex-col justify-center bg-[rgba(0,0,0,0.5)]'>
 
@@ -33,7 +46,7 @@ const Withdrawal = () => {
                         Hello <strong className='font-extrabold'>{username},</strong> <br />
                         You have requested to withdraw the sum of ${WithdrawalAmount}.<br />
                     </div>
-                    <button className="bg-primary font-poppins font-extrabold h-[50px] rounded-xl te" onClick={(e) => { e.preventDefault(); navigate(-1) }}>Dashboard</button>
+                    <button className="bg-primary font-poppins font-extrabold h-[50px] rounded-xl te" onClick={done}>Dashboard</button>
                 </div>
             </div>
 
@@ -50,7 +63,7 @@ const Withdrawal = () => {
                             {coins.map(coin => {
                                 return (
                                     // eslint-disable-next-line react/jsx-key
-                                    <option >
+                                    <option value={coin.name}>
                                         {coin.name}
                                     </option>
                                 );

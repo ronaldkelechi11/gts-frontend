@@ -36,6 +36,7 @@ const Home = () => {
         <>
             <div className="w-screen flex flex-col gap-5 bg-white">
                 <Navbar />
+                <div className="text-3xl font-poppins text-center">Hey <strong>{username}</strong>,</div>
 
                 <div className="flex w-full h-screen md:h-auto flex-col md:flex-row gap-3 p-2 md:p-5">
                     <div className="bg-black flex-1 h-52 rounded-xl shadow-xl flex flex-col justify-center items-center gap-3">
