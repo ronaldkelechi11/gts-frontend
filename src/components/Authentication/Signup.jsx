@@ -54,7 +54,7 @@ const Signup = () => {
 
                         <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="tel" placeholder="Telephone" value={telephone} onChange={(e) => { setTelephone(e.target.value) }} required />
 
-                        <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} required minLength={8} maxLength={64} autoComplete="false" />
+                        <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} required minLength={8} maxLength={64} />
 
                         <input className="h-[50px] border-primary border-solid border rounded-xl p-2 font-poppins outline-none" type="text" placeholder="Refferal Code" />
 

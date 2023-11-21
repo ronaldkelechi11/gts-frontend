@@ -27,7 +27,7 @@ const Home = () => {
             setUser(result.data)
         }).catch((err) => {
             console.log(err);
-            navigate('/signup')
+            // navigate('/signup')
         });
 
     return (
@@ -53,7 +53,7 @@ const Home = () => {
                 </div>
 
                 <div className="w-full flex flex-row gap-1 justify-evenly">
-                    <div className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Withdraw </div>
+                    <Link to="withdrawal" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Withdraw </Link>
 
                     <Link to="transactions" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Transactions</Link>
 
