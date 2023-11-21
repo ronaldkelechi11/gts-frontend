@@ -26,7 +26,7 @@ const Transactions = () => {
         <>
             <div className="w-screen h-screen bg-white flex flex-col">
                 <div
-                    className="bg-primary w-screen h-14 flex justify-between items-center text-2xl text-white font-poppins font-extrabold p-2">
+                    className="bg-primary w-screen h-auto flex justify-between items-center text-2xl text-white font-poppins font-extrbold p-4">
                     <FaArrowLeft onClick={goBack} />  <span className="text-center">Transactions</span>
                 </div>
 

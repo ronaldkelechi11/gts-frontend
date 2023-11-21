@@ -83,7 +83,8 @@ const Deposit = () => {
 
                     <div className="text-center">You are to make a payment of <span className="font-extrabold">${amount}</span> using your selected crypto currency. Screenshot and upload the proof of payment. Then wait for 24 hours for our staff to verify if. Thank you</div>
 
-                    <input className="self-center bg-primary font-poppins file:border-none file:bg-black file:text-white h-[50px] file:h-full rounded-lg file:cursor-pointer" type="file" accept="image/*" onChange={(e) => { setFile(e.target.files[0]) }} />
+                    <input className="self-center bg-primary font-poppins file:border-none file:bg-black file:text-white h-[50px] file:h-full rounded-lg file:cursor-pointer" type="file" accept="image/*" required onChange={(e) => { setFile(e.target.files[0]) }} />
+
 
                     <button onClick={createNewDeposit} className="bg-primary font-poppins font-extrabold h-[50px] rounded-xl">Done</button>
                 </div>

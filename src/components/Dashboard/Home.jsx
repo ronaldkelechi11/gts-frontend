@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Plans from "../Landing/Plans";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         telephone: "",
         password: '',
         balance: 0,
+        profit: 0,
         refferalCode: "",
         refferals: [{}]
     })
@@ -33,7 +35,7 @@ const Home = () => {
     return (
         <>
             <div className="w-screen flex flex-col gap-5 bg-white">
-                <div className="bg-primary w-screen h-14 uppercase flex justify-center items-center text-2xl text-white font-poppins font-extrabold">Dashboard</div>
+                <Navbar />
 
                 <div className="flex w-full h-screen md:h-auto flex-col md:flex-row gap-3 p-2 md:p-5">
                     <div className="bg-black flex-1 h-52 rounded-xl shadow-xl flex flex-col justify-center items-center gap-3">
@@ -43,7 +45,7 @@ const Home = () => {
 
                     <div className="bg-blue-500 h-52 flex-1 rounded-xl shadow-xl flex flex-col justify-center items-center gap-3">
                         <div className="text-white font-poppins uppercase font-extrabold text-xl">Profit</div>
-                        <div className="text-white font-poppins uppercase font-extrabold text-4xl">$ <span>{"0"}</span></div>
+                        <div className="text-white font-poppins uppercase font-extrabold text-4xl">$ <span>{user.profit}</span></div>
                     </div>
 
                     <div className="bg-primary h-52 flex-1 rounded-xl shadow-xl flex flex-col justify-center items-center gap-3">
