@@ -1,14 +1,14 @@
 import Blocks from "../components/Admin/Blocks"
-import Header from "../components/Admin/Header"
-import TransactionWrapper from "../components/Admin/TransactionWrapper"
+import Navbar from "../components/Admin/Navbar"
+import UserWrapper from "../components/Admin/UserWrapper"
 
 const Admin = () => {
 
     return (
         <div className="w-screen flex flex-col">
-            <Header />
+            <Navbar />
             <Blocks />
-            <TransactionWrapper />
+            <UserWrapper />
         </div>
     )
 }

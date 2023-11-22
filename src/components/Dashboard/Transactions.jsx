@@ -19,7 +19,6 @@ const Transactions = () => {
 
     function goBack() {
         navigate(-1)
-        console.log("I was clicked");
     }
 
     return (
@@ -50,9 +49,10 @@ const Transactions = () => {
 function Transaction({ amount, category, coin, file, verified, }) {
     return (
         <div className="w-full rounded-lg shadow-xl bg-white flex flex-col gap-2 p-3">
-            <div className="text-xl">Amount: <span> ${amount}</span></div>
-            <div className="">Category: <span>{category}</span></div>
-            <div className="">Payment Coin: <span>{coin}</span></div>
+            <div className="text-xl"><strong>Amount:</strong> <span> ${amount}</span></div>
+            <div className="text-xl"><strong>Expected Profit:</strong> ${amount * 200 / 100}</div>
+            <div className="text-xl"><strong>Category:</strong> <span>{category}</span></div>
+            <div className="text-xl"><strong>Payment Coin:</strong> <span>{coin}</span></div>
             <div className={verified ? "text-green-500" : "text-red-500"}>{verified ? 'Verified' : 'Un-Verified'}</div>
         </div>
     )

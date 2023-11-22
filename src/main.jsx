@@ -12,7 +12,9 @@ import Deposit from './components/Dashboard/Deposit'
 import Notfound from './screens/Notfound'
 import Transactions from './components/Dashboard/Transactions'
 import Admin from './screens/Admin'
+import TransactionWrapper from './components/Admin/TransactionWrapper'
 import Withdrawal from './components/Dashboard/Withdrawal'
+import Withdrawals from './components/Admin/Withdrawals'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -32,6 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <Route path='/admin'>
         <Route index element={<Admin />} />
+        <Route path='withdrawals' element={<Withdrawals />} />
+        <Route path='transactions' element={<TransactionWrapper />} />
       </Route>
 
       <Route path="*" element={<Notfound />} />
