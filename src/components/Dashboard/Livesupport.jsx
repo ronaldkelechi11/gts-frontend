@@ -1,27 +1,43 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { FaArrowLeft } from "react-icons/fa";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LivesupportWrapper from "./LivesupportWrapper";
+import axios from "axios";
 
 const Livesupport = () => {
     const { username } = useParams()
     const navigate = useNavigate()
     const [message, setMessage] = useState()
-    const messages = [
-        { _id: 1, text: "Hello", sender: username, receiver: 'Admin' },
-        { _id: 2, text: "How may we help you", sender: 'Admin', receiver: username },
-        { _id: 3, text: "I'm having issues withdrawing", sender: username, receiver: 'Admin' },
-        { _id: 4, text: "Okay. We'll check the error for you", sender: 'Admin', receiver: username },
-    ]
+    const [messages, setMessages] = useState([{ _id: 1, text: 'placeholder', sender: username, receiver: 'Admin' }])
 
     function goBack() {
         navigate(-1)
     }
 
+    // get all messages
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/livesupport').
+            then((result) => {
+                setMessages(result.data)
+            }).catch((err) => {
+                console.log(err);
+            });
+    }, [messages])
+
+
+    // send a message
     async function sendMessage() {
         await console.log(message);
-        setMessage('')
+        axios.post(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/livesupport', {
+            text: message, sender: username, receiver: 'Admin'
+        }).
+            then((result) => {
+                console.log(result);
+                setMessage('')
+            }).catch((err) => {
+                console.log(err);
+            });
     }
 
     return (
