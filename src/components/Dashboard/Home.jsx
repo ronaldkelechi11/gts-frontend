@@ -55,12 +55,14 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="w-full flex flex-row gap-1 justify-evenly">
+                <div className="w-full md:flex md:flex-row grid grid-cols-2 gap-1 justify-evenly">
                     <Link to="withdrawal" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Withdraw </Link>
 
                     <Link to="transactions" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Transactions</Link>
 
-                    <Link to="deposit" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Deposit</Link>
+                    <Link to="deposit" className="bg-primary rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Deposit</Link>
+
+                    <Link to="livesupport" className="bg-blue-500 rounded-xl shadow-lg p-[10px_20px] md:p-[20px_40px] cursor-pointer hover:scale-125 hover:text-white text-lg font-poppins">Live Support</Link>
                 </div>
 
 
