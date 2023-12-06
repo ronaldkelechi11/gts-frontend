@@ -41,6 +41,7 @@ function NavLinks() {
             <Link reloadDocument className={navbarStyling}>Home</Link>
             <Link className={navbarStyling} to="withdrawals">Withdrawals</Link>
             <Link className={navbarStyling} to="transactions">Transactions</Link>
+            <Link className={navbarStyling} to="messages">Live Support</Link>
             <a className={navbarStyling} href="/" onClick={() => { alert("Your are about to be logged out of the Admin account") }}>Log Out</a>
         </div>
     )

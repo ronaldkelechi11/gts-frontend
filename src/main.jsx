@@ -16,6 +16,8 @@ import TransactionWrapper from './components/Admin/TransactionWrapper'
 import Withdrawal from './components/Dashboard/Withdrawal'
 import Withdrawals from './components/Admin/Withdrawals'
 import Livesupport from './components/Dashboard/Livesupport'
+import AllUsersList from './components/Admin/AllUsersList'
+import Message from './components/Admin/Message'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -38,6 +40,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route index element={<Admin />} />
         <Route path='withdrawals' element={<Withdrawals />} />
         <Route path='transactions' element={<TransactionWrapper />} />
+        <Route path='messages' element={<AllUsersList />} />
+        <Route path='messages/:username' element={<Message />} />
       </Route>
 
       <Route path="*" element={<Notfound />} />

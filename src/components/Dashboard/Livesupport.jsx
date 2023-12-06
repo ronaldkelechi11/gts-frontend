@@ -19,16 +19,16 @@ const Livesupport = () => {
     useEffect(() => {
         axios.get(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/livesupport').
             then((result) => {
+                console.log(result);
                 setMessages(result.data)
             }).catch((err) => {
                 console.log(err);
             });
-    }, [messages])
+    }, [])
 
 
     // send a message
     async function sendMessage() {
-        await console.log(message);
         axios.post(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/livesupport', {
             text: message, sender: username, receiver: 'Admin'
         }).
