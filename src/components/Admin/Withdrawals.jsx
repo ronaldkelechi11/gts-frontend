@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaArrowLeft } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 
@@ -27,7 +28,7 @@ const Withdrawals = () => {
                     withdrawals?.map(withdrawal => {
                         return (
                             // eslint-disable-next-line react/jsx-key
-                            <Withdrawal withdrawal={withdrawal} />
+                            <Withdrawal key={withdrawal._id} withdrawal={withdrawal} />
                         )
                     })
                 }
@@ -59,7 +60,7 @@ function Withdrawal({ withdrawal }) {
             <div className="text-xl"><strong>Username:</strong> {withdrawal.user?.username}</div>
             <div className="text-xl"><strong>Amount:</strong> ${withdrawal.amount}</div>
             <div className="text-xl"><strong>Coin:</strong> {withdrawal.coin}</div>
-            <div className="text-xl"><strong>Wallet Address:</strong> {withdrawal.walletAddress}</div>
+            <div className="text-xl text-ellipsis"><strong>Wallet Address:</strong> {withdrawal.walletAddress}</div>
             <div onClick={verifyWithdrawal}
                 className={
                     withdrawal.verified ?

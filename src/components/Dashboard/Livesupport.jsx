@@ -19,12 +19,11 @@ const Livesupport = () => {
     useEffect(() => {
         axios.get(import.meta.env.VITE_BACKEND_URL + 'dashboard/' + username + '/livesupport').
             then((result) => {
-                console.log(result);
                 setMessages(result.data)
             }).catch((err) => {
                 console.log(err);
             });
-    }, [message])
+    }, [message, username])
 
 
     // send a message
@@ -33,7 +32,6 @@ const Livesupport = () => {
             text: message, sender: username, receiver: 'Admin'
         }).
             then((result) => {
-                console.log(result);
                 setMessage('')
             }).catch((err) => {
                 console.log(err);
@@ -41,8 +39,8 @@ const Livesupport = () => {
     }
 
     return (
-        <div className='bg-white w-screen h-screen flex flex-col'>
-            <div className="w-full h-16 bg-primary flex flex-row justify-between items-center p-2">
+        <div className='bg-white w-screen h-screen flex flex-col '>
+            <div className="w-full h-16 bg-primary flex fixed top-0 flex-row justify-between items-center p-2">
                 <FaArrowLeft color="white" size={24} onClick={goBack} />
                 <p className="text-white font-poppins text-2xl">Live Support</p>
             </div>
