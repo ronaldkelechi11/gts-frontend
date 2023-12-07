@@ -20,7 +20,7 @@ const Message = () => {
             }).catch((err) => {
                 console.log(err);
             });
-    }, [])
+    }, [message, messages])
 
 
     function sendMessage() {
@@ -46,8 +46,7 @@ const Message = () => {
             <div className="flex h-full flex-col bg-slate-50 gap-3 w-full p-2">
                 {
                     messages.map(message => {
-                        console.log(message);
-                        if (message.sender == 'Admin') {
+                        if (message.sender == "Admin") {
                             return (<SentMessage message={message} key={message._id} />)
                         }
                         else {

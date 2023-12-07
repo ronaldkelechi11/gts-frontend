@@ -24,7 +24,7 @@ const Livesupport = () => {
             }).catch((err) => {
                 console.log(err);
             });
-    }, [])
+    }, [message])
 
 
     // send a message

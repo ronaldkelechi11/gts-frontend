@@ -7,8 +7,6 @@ const LivesupportWrapper = ({ messages }) => {
     return (
         <div className='flex h-full flex-col bg-slate-50 gap-3 w-full p-2'>
             {messages?.map(message => {
-                console.log("From wrapper: " + message.text.toString());
-
                 if (message.sender == username.toString()) {
                     return (<SentMessage message={message} key={message._id} />)
                 }
